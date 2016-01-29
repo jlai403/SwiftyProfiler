@@ -1,36 +1,33 @@
-//
-//  SwiftyProfilerTests.swift
-//  SwiftyProfilerTests
-//
-//  Created by Joey Lai on 2016-01-29.
-//  Copyright © 2016 Joey Lai. All rights reserved.
-//
 
 import XCTest
 @testable import SwiftyProfiler
 
-class SwiftyProfilerTests: XCTestCase {
+public class SwiftyProfilerTests: XCTestCase {
     
-    override func setUp() {
+    override public func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        SwiftyProfiler.ENABLED = true
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override public func tearDown() {
         super.tearDown()
+        SwiftyProfiler.sharedInstance.clear()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_stopRecording() {
+        // assemble
+        let label = "test_stopRecording"
+        SwiftyProfiler.sharedInstance.startRecording(label)
+        sleep(2)
+        
+        // act
+        SwiftyProfiler.sharedInstance.stopRecording(label)
+        
+        // assert
+        let timing = SwiftyProfiler.sharedInstance.getResults(label)
+        
+        XCTAssertNotNil(timing)
+        XCTAssertEqualWithAccuracy(2.0, timing!.elapsedTime().toSecs(), accuracy: 0.1)
+        XCTAssertEqualWithAccuracy(2000.0, timing!.elapsedTime().toMillis(), accuracy: 100.0)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
