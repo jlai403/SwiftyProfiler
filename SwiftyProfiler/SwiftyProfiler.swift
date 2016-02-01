@@ -28,6 +28,12 @@ public class SwiftyProfiler {
             timing.stop = NSDate()
         }
     }
+    
+    public func record(label: String, block: ()->()) {
+        startRecording(label)
+        block()
+        stopRecording(label)
+    }
  
     public func getResults(label: String) -> Timing? {
         return timings[label]
