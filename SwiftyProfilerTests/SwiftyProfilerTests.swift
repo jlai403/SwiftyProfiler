@@ -27,8 +27,8 @@ public class SwiftyProfilerTests: XCTestCase {
         let timing = SwiftyProfiler.sharedInstance.getResults(label)
         
         XCTAssertNotNil(timing)
-        XCTAssertEqualWithAccuracy(2.0, timing!.elapsedTime().toSecs(), accuracy: 0.2)
-        XCTAssertEqualWithAccuracy(2000.0, timing!.elapsedTime().toMillis(), accuracy: 200.0)
+        XCTAssertEqualWithAccuracy(2.0, timing!.elapsedTime().toSecs(), accuracy: 0.5)
+        XCTAssertEqualWithAccuracy(2000.0, timing!.elapsedTime().toMillis(), accuracy: 500.0)
     }
     
     func test_record_block() {
@@ -43,7 +43,7 @@ public class SwiftyProfilerTests: XCTestCase {
         let timing = SwiftyProfiler.sharedInstance.getResults(label)
         
         XCTAssertNotNil(timing)
-        XCTAssertEqualWithAccuracy(2.0, timing!.elapsedTime().toSecs(), accuracy: 0.2)
-        XCTAssertEqualWithAccuracy(2000.0, timing!.elapsedTime().toMillis(), accuracy: 200.0)
+        XCTAssertEqualWithAccuracy(2.0, timing!.elapsedTime().toSecs(), accuracy: 0.5)
+        XCTAssertEqualWithAccuracy(2000.0, timing!.elapsedTime().toMillis(), accuracy: 500.0)
     }
 }
