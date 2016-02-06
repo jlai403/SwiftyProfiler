@@ -2,7 +2,11 @@ import Foundation
 
 public class SwiftyProfiler {
     
-    public static var ENABLED: Bool = true
+    public var enabled: Bool  {
+        get {
+            return Configuration.sharedInstance.enabled
+        }
+    }
     
     public static let sharedInstance = SwiftyProfiler()
     
@@ -12,7 +16,7 @@ public class SwiftyProfiler {
     }
     
     public func startRecording(label: String) {
-        if !SwiftyProfiler.ENABLED {
+        if !enabled {
             return
         }
         
@@ -20,13 +24,18 @@ public class SwiftyProfiler {
     }
     
     public func stopRecording(label: String) {
-        if !SwiftyProfiler.ENABLED {
+        if !enabled {
             return
         }
         
         if let timing = timings[label] {
             timing.stop = NSDate()
+            debugLog(timing)
         }
+    }
+    
+    private func debugLog(timing: Timing) {
+        NSLog("\(timing.label) completed in %.2fms", timing.elapsedTime().toMillis());
     }
     
     public func record(label: String, block: ()->()) {

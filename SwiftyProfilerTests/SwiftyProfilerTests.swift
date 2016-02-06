@@ -6,7 +6,6 @@ public class SwiftyProfilerTests: XCTestCase {
     
     override public func setUp() {
         super.setUp()
-        SwiftyProfiler.ENABLED = true
     }
     
     override public func tearDown() {
