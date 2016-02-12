@@ -14,6 +14,7 @@
 		6C676BC51C5BD2FF00F0C0A9 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C676BC41C5BD2FF00F0C0A9 /* Timing.swift */; };
 		6C8091531C65C87500D3971A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8091521C65C87500D3971A /* Configuration.swift */; };
 		6CEB09D81C6DA1BA0004A4BD /* SwiftyProfilerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEB09D71C6DA1BA0004A4BD /* SwiftyProfilerManager.swift */; };
+		6CEB0A2D1C6DA5C60004A4BD /* SwiftyProfiler.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C8091561C65DE4600D3971A /* SwiftyProfiler.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CEB0A2D1C6DA5C60004A4BD /* SwiftyProfiler.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
