@@ -1,6 +1,6 @@
 import Foundation
 
-public class SwiftyProfiler {
+public class SwiftyProfiler: NSObject {
     
     public var enabled: Bool  {
         get {
@@ -12,7 +12,7 @@ public class SwiftyProfiler {
     
     private var timings = [String: Timing]()
     
-    private init() {
+    private override init() {
     }
     
     public func startRecording(label: String) {

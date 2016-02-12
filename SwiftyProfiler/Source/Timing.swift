@@ -1,6 +1,6 @@
 import Foundation
 
-public class Timing {
+public class Timing: NSObject {
     
     var label: String
     var start: NSDate?

@@ -36,7 +36,7 @@ public class SwiftyProfilerTests: XCTestCase {
         SwiftyProfiler.sharedInstance.record(label) {
             sleep(2)
         }
-        
+
         
         // assert
         let timing = SwiftyProfiler.sharedInstance.getResults(label)
