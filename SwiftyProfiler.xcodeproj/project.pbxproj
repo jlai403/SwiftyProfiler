@@ -15,6 +15,7 @@
 		6C8091531C65C87500D3971A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8091521C65C87500D3971A /* Configuration.swift */; };
 		6CEB09D81C6DA1BA0004A4BD /* SwiftyProfilerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEB09D71C6DA1BA0004A4BD /* SwiftyProfilerManager.swift */; };
 		6CEB0A2D1C6DA5C60004A4BD /* SwiftyProfiler.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C8091561C65DE4600D3971A /* SwiftyProfiler.plist */; };
+		6CEB0A301C6DACEC0004A4BD /* SwiftyProfilerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEB0A2F1C6DACEC0004A4BD /* SwiftyProfilerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		6C8091521C65C87500D3971A /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6C8091561C65DE4600D3971A /* SwiftyProfiler.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftyProfiler.plist; sourceTree = "<group>"; };
 		6CEB09D71C6DA1BA0004A4BD /* SwiftyProfilerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyProfilerManager.swift; sourceTree = "<group>"; };
+		6CEB0A2F1C6DACEC0004A4BD /* SwiftyProfilerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyProfilerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,29 @@
 			isa = PBXGroup;
 			children = (
 				6C676BAB1C5BCCF500F0C0A9 /* SwiftyProfiler.h */,
-				6C8091521C65C87500D3971A /* Configuration.swift */,
-				6C676BC21C5BCE4400F0C0A9 /* SwiftyProfiler.swift */,
-				6CEB09D71C6DA1BA0004A4BD /* SwiftyProfilerManager.swift */,
-				6C676BC41C5BD2FF00F0C0A9 /* Timing.swift */,
+				6CEB0A311C6DAD0C0004A4BD /* Profiler */,
+				6CEB0A2E1C6DACDC0004A4BD /* View */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		6CEB0A2E1C6DACDC0004A4BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CEB09D71C6DA1BA0004A4BD /* SwiftyProfilerManager.swift */,
+				6CEB0A2F1C6DACEC0004A4BD /* SwiftyProfilerButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6CEB0A311C6DAD0C0004A4BD /* Profiler */ = {
+			isa = PBXGroup;
+			children = (
+				6C8091521C65C87500D3971A /* Configuration.swift */,
+				6C676BC21C5BCE4400F0C0A9 /* SwiftyProfiler.swift */,
+				6C676BC41C5BD2FF00F0C0A9 /* Timing.swift */,
+			);
+			name = Profiler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +241,7 @@
 				6C676BC31C5BCE4400F0C0A9 /* SwiftyProfiler.swift in Sources */,
 				6CEB09D81C6DA1BA0004A4BD /* SwiftyProfilerManager.swift in Sources */,
 				6C676BC51C5BD2FF00F0C0A9 /* Timing.swift in Sources */,
+				6CEB0A301C6DACEC0004A4BD /* SwiftyProfilerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
