@@ -23,6 +23,22 @@ public class SwiftyProfilerButton: UIButton {
     }
     
     func showLog(sender: UIButton) {
+        guard let vc = UIApplication.sharedApplication().keyWindow?.getTopViewController() else {
+            return
+        }
         
+        let swiftyProfilerStoryboard = UIStoryboard(name: "SwiftyProfiler", bundle: nil)
+        
+        if let profilerLogViewController = swiftyProfilerStoryboard.instantiateViewControllerWithIdentifier("SwiftyProfilerLog") as? SwiftyProfilerLogController {
+            profilerLogViewController.onDismiss = {
+                sender.hidden = false
+                sender.enabled = true
+            }
+            
+            vc.presentViewController(profilerLogViewController, animated: true) {
+                sender.hidden = true
+                sender.enabled = false
+            }
+        }
     }
 }

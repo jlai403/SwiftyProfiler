@@ -10,8 +10,11 @@ public class SwiftyProfilerLogController: UIViewController {
     private var swiftyProfilerTableViewData: SwiftyProfilerTableViewData!
     
     public override func viewDidLoad() {
-        styleView()
-        swiftyProfilerTableViewData = SwiftyProfilerTableViewData()
+        setupTable()
+    }
+    
+    private func setupTable() {
+        self.swiftyProfilerTableViewData = SwiftyProfilerTableViewData()
         self.logsTableView.delegate = swiftyProfilerTableViewData
         self.logsTableView.dataSource = swiftyProfilerTableViewData
     }
@@ -20,14 +23,17 @@ public class SwiftyProfilerLogController: UIViewController {
         self.logsTableView.reloadData()
     }
     
-    private func styleView() {
-    }
-    
     @IBAction func dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) {
             self.onDismiss()
         }
     }
+}
+
+class SwiftyProfilerTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var elapsedMsLabel: UILabel!
 }
 
 class SwiftyProfilerTableViewData: NSObject, UITableViewDataSource, UITableViewDelegate {
@@ -52,10 +58,12 @@ class SwiftyProfilerTableViewData: NSObject, UITableViewDataSource, UITableViewD
     {
         
         let timing = timings[indexPath.row]
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "logTableViewCell")
-        cell.textLabel!.text = timing.label
-        cell.detailTextLabel!.text = String(format: "%.4fms", timing.elapsedTime().toMillis())
-        return cell
+        if let cell = tableView.dequeueReusableCellWithIdentifier("logTableViewCell") as? SwiftyProfilerTableViewCell {
+            cell.label.text = timing.label
+            cell.elapsedMsLabel.text = String(format: "%.2f", timing.elapsedTime().toMillis())
+            return cell
+        }
+        return UITableViewCell()
     }
     
 }
