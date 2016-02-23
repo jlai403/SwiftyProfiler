@@ -51,4 +51,8 @@ public class SwiftyProfiler: NSObject {
     public func clear() {
         timings.removeAll()
     }
+    
+    public func getTimings() -> [Timing] {
+        return self.timings.map({ (key, value) -> Timing in return value })
+    }
 }
