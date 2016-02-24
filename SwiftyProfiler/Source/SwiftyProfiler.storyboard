@@ -9,7 +9,7 @@
         <!--Swifty Profiler Log Controller-->
         <scene sceneID="EeV-4O-wIP">
             <objects>
-                <viewController storyboardIdentifier="SwiftyProfilerLog" modalPresentationStyle="overCurrentContext" id="lzu-9a-Pc8" customClass="SwiftyProfilerLogController" customModule="SwiftyProfilerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwiftyProfilerLog" modalPresentationStyle="overCurrentContext" id="lzu-9a-Pc8" customClass="SwiftyProfilerLogController" customModule="SwiftyProfiler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5J-0C-Kxm"/>
                         <viewControllerLayoutGuide type="bottom" id="5Xd-TC-kR7"/>
@@ -37,23 +37,23 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-va-aRR">
-                                        <rect key="frame" x="8" y="41.5" width="494" height="285.5"/>
+                                        <rect key="frame" x="10" y="41.5" width="490" height="285.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="logTableViewCell" rowHeight="40" id="qus-TY-YtE" customClass="SwiftyProfilerTableViewCell" customModule="SwiftyProfilerDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="494" height="40"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="logTableViewCell" rowHeight="40" id="qus-TY-YtE" customClass="SwiftyProfilerTableViewCell" customModule="SwiftyProfiler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="490" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qus-TY-YtE" id="tIY-RK-86G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="494" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="490" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWs-iE-dLQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWs-iE-dLQ">
                                                             <rect key="frame" x="8" y="11" width="388.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZP-XO-ED7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZP-XO-ED7">
                                                             <rect key="frame" x="411" y="13" width="75" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="75" id="dz1-Wj-k6G"/>
@@ -94,7 +94,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.2259731089" green="0.6693856976" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Z6k-va-aRR" secondAttribute="trailing" constant="8" id="1gJ-US-0Ot"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z6k-va-aRR" secondAttribute="trailing" constant="10" id="1gJ-US-0Ot"/>
                                     <constraint firstItem="ujB-Rf-HMf" firstAttribute="centerX" secondItem="Aub-0J-XjA" secondAttribute="centerX" id="2Dk-p2-kPQ"/>
                                     <constraint firstItem="ujB-Rf-HMf" firstAttribute="top" secondItem="Z6k-va-aRR" secondAttribute="bottom" constant="8" id="3Ri-qs-ibc"/>
                                     <constraint firstItem="ene-Cx-c0t" firstAttribute="centerY" secondItem="Z3U-r6-zUh" secondAttribute="centerY" id="5lV-HX-P3l"/>
@@ -104,7 +104,7 @@
                                     <constraint firstItem="Z6k-va-aRR" firstAttribute="top" secondItem="Aub-0J-XjA" secondAttribute="top" constant="100" id="Imd-YY-m0y"/>
                                     <constraint firstItem="Z3U-r6-zUh" firstAttribute="leading" secondItem="Aub-0J-XjA" secondAttribute="leading" constant="8" id="JLy-SA-ISf"/>
                                     <constraint firstAttribute="height" constant="128" id="PS4-Ql-zFc"/>
-                                    <constraint firstItem="Z6k-va-aRR" firstAttribute="leading" secondItem="Aub-0J-XjA" secondAttribute="leading" constant="8" id="TbW-8h-gw5"/>
+                                    <constraint firstItem="Z6k-va-aRR" firstAttribute="leading" secondItem="Aub-0J-XjA" secondAttribute="leading" constant="10" id="TbW-8h-gw5"/>
                                     <constraint firstItem="Z6k-va-aRR" firstAttribute="top" secondItem="Z3U-r6-zUh" secondAttribute="bottom" constant="8" id="eOe-kL-I2o"/>
                                     <constraint firstAttribute="width" constant="240" id="wIP-gp-xGZ"/>
                                 </constraints>
