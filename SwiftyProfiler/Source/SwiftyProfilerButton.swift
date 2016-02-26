@@ -3,7 +3,12 @@ import UIKit
 public class SwiftyProfilerButton: UIButton {
     
     private static let SIZE = CGSizeMake(50.0, 50.0)
-    private static let TOP_RIGHT_CORNER = CGPointMake(UIScreen.mainScreen().bounds.width - SIZE.width, SIZE.height)
+    private static let LEFT_EDGE = CGFloat(0.0)
+    private static let RIGHT_EDGE = UIScreen.mainScreen().bounds.width - SIZE.width
+    private static let TOP_RIGHT_CORNER = CGPointMake(RIGHT_EDGE, SIZE.height)
+
+    
+    private var beingDragged: Bool = false
     
     static func newInstance() -> SwiftyProfilerButton {
         return SwiftyProfilerButton(frame: CGRect(origin: TOP_RIGHT_CORNER, size: SIZE))
@@ -19,11 +24,17 @@ public class SwiftyProfilerButton: UIButton {
     }
     
     public override func didMoveToSuperview() {
-        self.addTarget(self, action: Selector("showLog:"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.addTarget(self, action: Selector("dragBegan:event:"), forControlEvents: UIControlEvents.TouchDown)
+        self.addTarget(self, action: Selector("dragMoving:event:"), forControlEvents: UIControlEvents.TouchDragInside)
+        self.addTarget(self, action: Selector("dragEnded:event:"), forControlEvents: [UIControlEvents.TouchUpInside, UIControlEvents.TouchUpOutside])
     }
     
     func showLog(sender: UIButton) {
         guard let vc = UIApplication.sharedApplication().keyWindow?.getTopViewController() else {
+            return
+        }
+        
+        if self.beingDragged {
             return
         }
         
@@ -40,5 +51,46 @@ public class SwiftyProfilerButton: UIButton {
                 sender.enabled = false
             }
         }
+    }
+
+    func dragBegan(sender: UIButton, event: UIEvent) {
+        self.performSelector(Selector("showLog:"), withObject: sender, afterDelay: 0.1)
+    }
+    
+    func dragMoving(sender: UIButton, event: UIEvent) {
+        self.beingDragged = true
+        
+        if let touches = event.touchesForView(sender), touch = touches.first {
+            move(touch)
+        }
+    }
+    
+    func dragEnded(sender: UIButton, event: UIEvent) {
+        animateMoveToEdge {
+            self.beingDragged = false
+        }
+    }
+    
+    private func move(touch: UITouch) {
+        let previousLocation = touch.previousLocationInView(self)
+        let location = touch .locationInView(self)
+        let deltaX = location.x - previousLocation.x
+        let deltaY = location.y - previousLocation.y
+        self.center = CGPointMake(self.center.x + deltaX, self.center.y + deltaY);
+    }
+    
+    private func animateMoveToEdge(onComplete: ()->Void) {
+        let midX = UIScreen.mainScreen().bounds.midX
+        var frame = self.frame
+        frame.origin.x = self.center.x < midX ? SwiftyProfilerButton.LEFT_EDGE : SwiftyProfilerButton.RIGHT_EDGE
+        
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseOut,
+            animations: { () -> Void in
+                self.frame = frame
+            },
+            completion: { (finished) -> Void in
+                onComplete()
+            }
+        )
     }
 }
