@@ -1,4 +1,4 @@
 language: swift
 xcode_project: SwiftyProfiler.xcodeproj
 xcode_scheme: SwiftyProfiler
-script: xctool test -project SwiftyProfiler.xcodeproj -scheme SwiftyProfiler -sdk iphonesimulator
+script: xctool clean build test -project SwiftyProfiler.xcodeproj -scheme SwiftyProfiler -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
