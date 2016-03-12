@@ -1,0 +1,10 @@
+framework module SwiftyProfiler {
+  umbrella header "SwiftyProfiler.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftyProfiler.Swift {
+    header "SwiftyProfiler-Swift.h"
+}
