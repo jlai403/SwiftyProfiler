@@ -2,7 +2,11 @@ language: objective-c
 osx_image: xcode7.2
 xcode_project: SwiftyProfiler.xcodeproj
 xcode_scheme: SwiftyProfiler
-script: 
-  - xcodebuild -scheme SwiftyProfiler -destination "name=iPhone 6,OS=latest" -enableCodeCoverage YES test
+script:
+- xcodebuild -scheme SwiftyProfiler -destination "name=iPhone 6,OS=latest" -enableCodeCoverage
+  YES test
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
+notifications:
+  slack:
+    secure: bNhxkcg6hMlMRku5Wt4NgA/5bTRPikrdocyvcAt80JI0/8031j0drVLlDUEOLJg5ZEMh0HrIqQx9EQZs62igSFsHKs6VuRBwLwLn1nf34qjjZpov4v3Y5FFupLGPDl7/WMCCtuzb887TlJqxRgEtghfKA0gi+cINJyb+RM9hDkW9T4o4r7hsyedKhhpIkbNwMWApfsUeRBgHQAuQSaozf2WSLyqS/x7ml3pnhlzsbQpwUR83UnNhcOvjzxC8UMFo/b09NcL/DHIo47EYsVFdkWcjGiaj0jTbUFo9bJQqhuuMqe5J+eEw7kEZXURejY//ZuKol0unEa67YJimPCYlZWkE3pg+fcEE/uzBgLLBophlUDYZivXRlxZwY++BzhUoYoQ0VhJiJ1fGCje9/oCxLTp5p+GoqOXj69Cf8J4iTLbOvPXvbNqEHaM6uUC7OpPcccZjCmDZRRwLKxw7YrhPIIDYpJO78Ok2Fzh4GoWKfLYLnFR8tipnF+I9fcIrSLN9NCM4LrQqkgNmSTSTGRMUiCZoEBD9Zsxn4JWSGVSvx5QffpqKC9Xj88gFN8m6tbtq/yjUh3g9hxRGoXk23kZ4TVSOtFiXg7SWEO36AoMKLDKg011e6qw+UQe2nzBrlrWjsMMwQhYh6GZRPegq5mO1emt2mTlbSRaJhCc6MedxRUs=
