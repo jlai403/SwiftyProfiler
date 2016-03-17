@@ -20,16 +20,6 @@
 		6CEB0A301C6DACEC0004A4BD /* SwiftyProfilerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEB0A2F1C6DACEC0004A4BD /* SwiftyProfilerButton.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6C676BB41C5BCCF500F0C0A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6C676B9F1C5BCCF500F0C0A9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6C676BA71C5BCCF500F0C0A9;
-			remoteInfo = SwiftyProfiler;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6C676BA81C5BCCF500F0C0A9 /* SwiftyProfiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyProfiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C676BAB1C5BCCF500F0C0A9 /* SwiftyProfiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyProfiler.h; sourceTree = "<group>"; };
@@ -177,7 +167,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6C676BB51C5BCCF500F0C0A9 /* PBXTargetDependency */,
 			);
 			name = SwiftyProfilerTests;
 			productName = SwiftyProfilerTests;
@@ -262,14 +251,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6C676BB51C5BCCF500F0C0A9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6C676BA71C5BCCF500F0C0A9 /* SwiftyProfiler */;
-			targetProxy = 6C676BB41C5BCCF500F0C0A9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6C676BBA1C5BCCF600F0C0A9 /* Debug */ = {
